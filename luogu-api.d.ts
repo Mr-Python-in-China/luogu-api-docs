@@ -473,6 +473,13 @@ export interface ProblemSetData {
   privilegedTeams: TeamSummary[];
 }
 
+export interface SquadDetails {
+  name: string;
+  leader: UserSummary;
+  members: UserSummary[];
+  code: string;
+}
+
 export interface ContestData {
   contest: ContestDetails;
   contestProblems: {
@@ -480,9 +487,11 @@ export interface ContestData {
     problem: LegacyProblemSummary;
     submitted: boolean;
   }[] | null;
-  isScoreboardFrozen: boolean;
-  accessLevel: number;
-  joined: boolean;
+  canEdit?: boolean;
+  canViewScoreboard?: boolean;
+  joined?: boolean | number;
+  squad?: SquadDetails | null;
+  score?: Score | null;
   userElo: (EloRatingSummary & { previous: EloRatingSummary | null }) | null;
 }
 
@@ -864,13 +873,16 @@ export interface ContestSummary {
 }
 
 export interface Contest extends ContestSummary {
-  ruleType: number;
-  visibilityType: number;
+  ruleType?: number;
+  method?: number;
+  visibilityType?: number;
+  visibility?: number;
   invitationCodeType: number;
-  rated: boolean;
-  eloThreshold: number | null;
+  rated: boolean | number;
+  eloThreshold?: number | null;
   host: UserSummary | TeamSummary;
   problemCount: number;
+  squad?: boolean;
 }
 
 export interface ContestDetails extends Contest {
@@ -894,9 +906,14 @@ export interface ContestSettings {
   eloCenter: number | null;
 }
 
+/**
+ * 对于 ICPC 赛制，details 中的 score 表示提交次数（如果>=0表示通过且这是错误次数，<0表示未通过且绝对值是错误次数）
+ * runningTime 表示提交的相对时间。
+ */
 export interface Score {
   details: { [pid: string]: { score: number; runningTime?: number } } | [];
   user: UserSummary;
+  squad?: SquadDetails;
   score: number;
   runningTime: number;
 }

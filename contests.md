@@ -9,11 +9,16 @@
   </tr>
   <tr>
     <th align="right">参数</th>
-    <td><code>{ page?: number }</code></td>
+    <td>
+      <code>{ page?: number, method?: number, public?: number, name?: string }</code><br>
+      <code>method</code> 赛制。1: OI, 2: ICPC, 3: 乐多, 4: IOI。未提供时为全部。<br>
+      <code>public</code> 分类。1: 官方比赛, 2: 团队公开赛, 4: 个人公开赛, 11: 重现赛。未提供时为全部。<br>
+      <code>name</code> 比赛名称或者编号。
+    </td>
   </tr>
   <tr>
     <th align="right">响应主体</th>
-    <td><code>application/json</code> (<code>DataResponse&lt;{ contests: List&lt;Contest&gt; }&gt;</code>)</td>
+    <td><code>application/json</code> (<code>LentilleDataResponse&lt;{ contests: List&lt;Contest&gt; }&gt;</code>)</td>
   </tr>
 </table>
 
@@ -60,7 +65,7 @@
   </tr>
   <tr>
     <th align="right">响应主体</th>
-    <td><code>application/json</code> (<code>DataResponse&lt;ContestData&gt;</code>)</td>
+    <td><code>application/json</code> (<code>LentilleDataResponse&lt;ContestData&gt;</code>)</td>
   </tr>
 </table>
 
