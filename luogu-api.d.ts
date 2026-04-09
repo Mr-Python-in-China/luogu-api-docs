@@ -489,7 +489,15 @@ export interface ContestData {
   }[] | null;
   canEdit?: boolean;
   canViewScoreboard?: boolean;
-  joined?: boolean | number;
+  /**
+   * 是否已加入比赛。
+   * 对于普通比赛，往往是 0 / 1 表示未加入/已加入。
+   * 对于团队赛，可能是状态掩码：
+   * 例如 `1` 代表已个人报名，
+   * `17` 代表（个人+作为小队队长），
+   * `33` 代表（个人+作为小队成员）等。
+   */
+  joined?: number;
   squad?: SquadDetails | null;
   score?: Score | null;
   userElo: (EloRatingSummary & { previous: EloRatingSummary | null }) | null;
