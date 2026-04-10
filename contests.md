@@ -9,7 +9,7 @@
   </tr>
   <tr>
     <th align="right">参数</th>
-    <td><code><ContestListParams></code></td>
+    <td><code>ContestListParams</code></td>
   </tr>
   <tr>
     <th align="right">响应主体</th>
@@ -103,7 +103,7 @@
   </tr>
   <tr>
     <th align="right">请求主体</th>
-    <td><code>application/json</code> (<code>{ code?: string; unrated?: boolean; squadCode?: string }</code>)</td>  
+    <td><code>application/json</code> (<code>{ code?: string; unrated?: boolean; squadCode?: string }</code>)</td>
   </tr>
   <tr>
     <th align="right">响应主体</th>
@@ -142,11 +142,10 @@
   <tr>
     <th align="right">请求主体</th>
     <td><code>application/json</code> (<code>{ uid: number }</code>)</td>
-    <code>uid</code></td>
   </tr>
   <tr>
     <th align="right">响应主体</th>
-    <td><code>application/json</code> (<code>{ squad: SquadDetails | null }</code>) </td>
+    <td><code>application/json</code> (<code>{ squad: SquadDetails | null }</code>)</td>
   </tr>
 </table>
 

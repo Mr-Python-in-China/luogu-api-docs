@@ -473,7 +473,7 @@ export interface ProblemSetData {
   privilegedTeams: TeamSummary[];
 }
 
-export interface SquadDetails {
+export interface Squad {
   name: string;
   leader: UserSummary;
   members: UserSummary[];
@@ -498,7 +498,7 @@ export interface ContestData {
    * `33` 代表（个人+作为小队成员）等。
    */
   joined: number;
-  squad?: SquadDetails | null;
+  squad?: Squad | null;
   score?: Score;
   userElo?: (EloRatingSummary & { previous: EloRatingSummary | null }) | null;
 }
@@ -895,7 +895,6 @@ export interface Contest extends ContestSummary {
   visibility: number;
   invitationCodeType: number;
   rated: boolean | number;
-  eloThreshold: number | null;
   host: UserSummary | TeamSummary;
   problemCount: number;
   squad: boolean;
@@ -911,6 +910,7 @@ export interface LegacyContestDetails extends LegacyContest {
 export interface ContestDetails extends Contest {
   description: string;
   totalParticipants: number;
+  eloThreshold: number | null;
   eloDone: boolean;
 }
 
@@ -937,9 +937,10 @@ export interface Score {
       runningTime?: number;
     };
   } | [];
-  user: UserSummary;
-  squad?: SquadDetails;
-  score: number;
+  user: UserSummary & Maybe<SelfSummary>;
+  squad?: Squad;
+  /** 在参加了比赛但没有任何提交时，该项为 null */
+  score: number | null;
   /** OI 赛制为总运行时间（单位毫秒），否则为总罚时（单位秒）*/
   runningTime: number;
 }
