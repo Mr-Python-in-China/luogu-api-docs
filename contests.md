@@ -9,12 +9,7 @@
   </tr>
   <tr>
     <th align="right">参数</th>
-    <td>
-      <code>{ page?: number, method?: number, public?: number, name?: string }</code><br>
-      <code>method</code> 赛制。1: OI, 2: ICPC, 3: 乐多, 4: IOI。未提供时为全部。<br>
-      <code>public</code> 分类。1: 官方比赛, 2: 团队公开赛, 4: 个人公开赛, 11: 重现赛。未提供时为全部。<br>
-      <code>name</code> 比赛名称或者编号。
-    </td>
+    <td><code><ContestListParams></code></td>
   </tr>
   <tr>
     <th align="right">响应主体</th>
@@ -104,11 +99,11 @@
 <table>
   <tr>
     <th align="right">请求</th>
-    <td><code>POST /contest/:id/join</code> （或 <code>POST /fe/api/contest/join/:id</code>）</td>
+    <td><code>POST /contest/:id/join</code></td>
   </tr>
   <tr>
     <th align="right">请求主体</th>
-    <td><code>application/json</code> (<code>{ code?: string; unrated?: boolean; squadCode?: string }</code>)<br>
+    <td><code>application/json</code> (<code>{ code?: string; unrated?: boolean; squadCode?: string }</code>)</td>  
   </tr>
   <tr>
     <th align="right">响应主体</th>
@@ -146,12 +141,12 @@
   </tr>
   <tr>
     <th align="right">请求主体</th>
-    <td><code>application/json</code> (<code>{ uid: number }</code>)<br>
+    <td><code>application/json</code> (<code>{ uid: number }</code>)</td>
     <code>uid</code></td>
   </tr>
   <tr>
     <th align="right">响应主体</th>
-    <td><code>application/json</code> (<code>{ squad: SquadDetails | null }</code>) 
+    <td><code>application/json</code> (<code>{ squad: SquadDetails | null }</code>) </td>
   </tr>
 </table>
 
