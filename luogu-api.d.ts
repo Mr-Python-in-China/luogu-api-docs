@@ -485,7 +485,6 @@ export interface ContestData {
   contestProblems: {
     score: number;
     problem: ProblemSummary & Maybe<ProblemStatus>;
-    submitted: boolean;
   }[] | null;
   canEdit: boolean;
   canViewScoreboard: boolean;
