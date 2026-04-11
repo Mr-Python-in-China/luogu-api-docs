@@ -126,7 +126,7 @@
   </tr>
   <tr>
     <th align="right">响应主体</th>
-    <td><code>application/json</code> (<code>{ squad: SquadDetails }</code>)</td>
+    <td><code>application/json</code> (<code>{ squad: Squad }</code>)</td>
   </tr>
 </table>
 
@@ -145,7 +145,7 @@
   </tr>
   <tr>
     <th align="right">响应主体</th>
-    <td><code>application/json</code> (<code>{ squad: SquadDetails | null }</code>)</td>
+    <td><code>application/json</code> (<code>{ squad: Squad | null }</code>)</td>
   </tr>
 </table>
 

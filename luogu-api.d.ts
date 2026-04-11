@@ -500,7 +500,7 @@ export interface ContestData {
   joined: number;
   squad?: Squad | null;
   score?: Score;
-  userElo?: (EloRatingSummary & { previous: EloRatingSummary | null }) | null;
+  userElo?: (EloRating & { previous: EloRating | null }) | null;
 }
 
 export interface CreatedContestData {
@@ -895,7 +895,7 @@ export interface Contest extends ContestSummary {
   visibility: number;
   invitationCodeType: number;
   rated: boolean | number;
-  host: UserSummary | TeamSummary;
+  host: (UserSummary & Maybe<SelfSummary>) | TeamSummary;
   problemCount: number;
   squad: boolean;
 }
