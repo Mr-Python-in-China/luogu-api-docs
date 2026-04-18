@@ -30,7 +30,7 @@
   </tr>
   <tr>
     <th align="right">响应主体</th>
-    <td><code>application/json</code> (<code>{ contests: List&lt;Contest&gt; }</code>)</td>
+    <td><code>application/json</code> (<code>{ contests: List&lt;LegacyContest&gt; }</code>)</td>
   </tr>
 </table>
 
@@ -47,7 +47,7 @@
   </tr>
   <tr>
     <th align="right">响应主体</th>
-    <td><code>application/json</code> (<code>{ contests: List&lt;Contest&gt; }</code>)</td>
+    <td><code>application/json</code> (<code>{ contests: List&lt;LegacyContest&gt; }</code>)</td>
   </tr>
 </table>
 
